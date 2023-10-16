@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/loggingin.qml</file>
+        <file>res/radar.qml</file>
+    </qresource>
+</RCC>
