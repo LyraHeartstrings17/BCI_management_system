@@ -29,12 +29,12 @@ HEADERS += \
     mainwindow.h \
 
 FORMS += \
-    gamefinishwidget.ui \
-    login.ui \
+    gamefinishwidget/gamefinishwidget.ui \
+    gamefinishwidget/radar.ui \
+    login/login.ui \
+    login/register.ui \
+    login/register_info.ui \
     mainwindow.ui \
-    radar.ui \
-    register.ui \
-    register_info.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
