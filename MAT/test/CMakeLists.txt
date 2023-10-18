@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10.0)
+project(mat_test)
+file(COPY ${MATDLL} DESTINATION ".")
+add_executable(mat_test main.cpp)
+target_link_libraries(mat_test MAT)
