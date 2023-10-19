@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/curve.qml</file>
+    </qresource>
+</RCC>

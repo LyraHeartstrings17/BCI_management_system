@@ -1,9 +1,11 @@
-#include "mat.h"
+﻿#include "mat.h"
 #include "QVariantMap"
+#include"QDebug"
 int main()
 {
    MAT mat;
-   mat.setFileName("test.mat");
+
+   mat.setFileName("text.mat");
    mat.setChannelNum(2);
    mat.saveSrate(1000);
    mat.saveAge(18);
@@ -23,6 +25,7 @@ int main()
    mat.saveEevent(list2);
    mat.saveUrevent(list2);
    int i=1000;
+   qDebug()<<1;
    double *data=(double*)malloc(sizeof (double)*2);
    while (i) {
        data[0]=0.40;
@@ -30,6 +33,7 @@ int main()
        mat.save(data,sizeof (double)*2);
        i--;
    }
+
    free(data);
    mat.stop();
 

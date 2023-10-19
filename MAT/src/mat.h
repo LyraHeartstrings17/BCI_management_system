@@ -2,7 +2,7 @@
 #define MAT_H
 
 #include "QObject"
-#include "QTemporaryFile"
+#include "QTemporaryFile"//临时文件
 #include "QTemporaryDir"
 #include "matio.h"
 class  MAT:public QObject

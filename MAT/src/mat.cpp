@@ -1,5 +1,6 @@
 ﻿#include "mat.h"
 #include "QDebug"
+#include "QFile"
 MAT::MAT(QObject *parent):QObject(parent)
 {
 }
@@ -13,6 +14,7 @@ void MAT::setFileName(QString name)
     mat_fp=Mat_CreateVer(name.toStdString().c_str(),NULL,MAT_FT_DEFAULT);
     start();
     saveFileName(name);
+
 }
 
 void MAT::start()
@@ -20,6 +22,7 @@ void MAT::start()
     size_t dim[2]={1,1};
     const char *field[9]={"chanlocs","data","srate","filename","event","urevent","ref","age","set"};
     eeg_struct=Mat_VarCreateStruct("EEG",2,dim,field,9);
+
 }
 void MAT::save(double *data,quint32 size)
 {
@@ -42,6 +45,13 @@ void MAT::stop()
     //关闭mat文件指针
     Mat_Close(mat_fp);
     mat_fp=NULL;
+//    QString filePath="E:\\ddd\\program\\data\\数据\\脑电数据";
+//    if (QFile::copy("text.mat", filePath)) {
+//        qDebug() << "File saved successfully.";
+//    } else {
+//        qDebug() << "Failed to save the file.";
+//    }
+
 }
 void MAT::saveChanlocs(QVariantList chanlocs)
 {
