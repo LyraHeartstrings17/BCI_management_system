@@ -14,294 +14,301 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">*{
+	font: 25 9pt &quot;Alibaba PuHuiTi 2.0&quot;;
+	color: rgb(118, 119, 121);
+}
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QFrame" name="frame_2">
-      <property name="styleSheet">
-       <string notr="true">QFrame {
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>1334</width>
+      <height>668</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
 	background-color: rgb(244, 242, 255)
     border: 1px solid black;  /* 设置边框为黑色，边框宽度为1像素 */
 }</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QWidget" name="frame" native="true">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>30</y>
+       <width>971</width>
+       <height>591</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget {
+    border: 1px solid black;  /* 设置边框为黑色，边框宽度为1像素 */
+	background-color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <widget class="QPushButton" name="showBtn">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>510</y>
+        <width>90</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>展示</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox1">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>40</y>
+        <width>251</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <property name="currentText">
+       <string>选择第几次测试结果</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>130</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:0px</string>
       </property>
       <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Plain</enum>
       </property>
-      <widget class="QWidget" name="frame" native="true">
-       <property name="geometry">
-        <rect>
-         <x>320</x>
-         <y>30</y>
-         <width>971</width>
-         <height>591</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QWidget {
-    border: 1px solid black;  /* 设置边框为黑色，边框宽度为1像素 */
-    background-color: white; /* 设置背景颜色为白色 */
-}</string>
-       </property>
-       <widget class="QPushButton" name="showBtn">
+      <property name="text">
+       <string>雷达图</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>130</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:0px</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="text">
+       <string>折线图</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="dateComboBox">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>40</y>
+        <width>281</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <property name="currentText">
+       <string>选择被测日期</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox2">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>40</y>
+        <width>301</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <property name="currentText">
+       <string>选择数据类型</string>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>160</y>
+        <width>891</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="page_2">
+       <widget class="QLabel" name="label_3">
         <property name="geometry">
          <rect>
-          <x>440</x>
-          <y>510</y>
-          <width>90</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>展示</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox1">
-        <property name="geometry">
-         <rect>
-          <x>370</x>
-          <y>40</y>
-          <width>251</width>
-          <height>60</height>
-         </rect>
-        </property>
-        <property name="editable">
-         <bool>true</bool>
-        </property>
-        <property name="currentText">
-         <string>选择第几次测试结果</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label">
-        <property name="geometry">
-         <rect>
-          <x>220</x>
-          <y>130</y>
-          <width>81</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border:0px</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
-        </property>
-        <property name="text">
-         <string>雷达图</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>710</x>
-          <y>130</y>
-          <width>81</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border:0px</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
-        </property>
-        <property name="text">
-         <string>折线图</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="dateComboBox">
-        <property name="geometry">
-         <rect>
-          <x>50</x>
-          <y>40</y>
-          <width>281</width>
-          <height>61</height>
-         </rect>
-        </property>
-        <property name="editable">
-         <bool>true</bool>
-        </property>
-        <property name="currentText">
-         <string>选择被测日期</string>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox2">
-        <property name="geometry">
-         <rect>
-          <x>640</x>
-          <y>40</y>
+          <x>280</x>
+          <y>110</y>
           <width>301</width>
-          <height>60</height>
+          <height>101</height>
          </rect>
         </property>
-        <property name="editable">
-         <bool>true</bool>
-        </property>
-        <property name="currentText">
-         <string>选择数据类型</string>
+        <property name="text">
+         <string>脑电page</string>
         </property>
        </widget>
-       <widget class="QStackedWidget" name="stackedWidget">
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>110</y>
+          <width>261</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>注意力page</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page">
+       <widget class="GameFinishWidget" name="radio_widget" native="true">
         <property name="geometry">
          <rect>
           <x>30</x>
-          <y>160</y>
-          <width>891</width>
-          <height>341</height>
+          <y>10</y>
+          <width>821</width>
+          <height>321</height>
          </rect>
         </property>
-        <property name="currentIndex">
-         <number>2</number>
-        </property>
-        <widget class="QWidget" name="page_2">
-         <widget class="QLabel" name="label_3">
-          <property name="geometry">
-           <rect>
-            <x>340</x>
-            <y>170</y>
-            <width>53</width>
-            <height>15</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>脑电page</string>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QWidget" name="page_3">
-         <widget class="QLabel" name="label_4">
-          <property name="geometry">
-           <rect>
-            <x>390</x>
-            <y>150</y>
-            <width>53</width>
-            <height>15</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>注意力page</string>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QWidget" name="page">
-         <widget class="GameFinishWidget" name="radio_widget" native="true">
-          <property name="geometry">
-           <rect>
-            <x>30</x>
-            <y>10</y>
-            <width>821</width>
-            <height>321</height>
-           </rect>
-          </property>
-         </widget>
-        </widget>
        </widget>
       </widget>
-      <widget class="QListWidget" name="listWidget">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>120</y>
-         <width>291</width>
-         <height>501</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QWidget" name="widget_2" native="true">
-       <property name="geometry">
-        <rect>
-         <x>14</x>
-         <y>20</y>
-         <width>301</width>
-         <height>88</height>
-        </rect>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLineEdit" name="queryEdit">
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
+     </widget>
+    </widget>
+    <widget class="QListWidget" name="listWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>291</width>
+       <height>501</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget_2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>20</y>
+       <width>301</width>
+       <height>88</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="queryEdit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
     border: 1px solid black;  /* 设置边框为红色，边框宽度为2像素 */
     background-color: white; /* 设置背景颜色为蓝色 */
 }</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QWidget" name="widget" native="true">
-          <layout class="QVBoxLayout" name="verticalLayout_2">
-           <item>
-            <widget class="QPushButton" name="queryBtn">
-             <property name="focusPolicy">
-              <enum>Qt::StrongFocus</enum>
-             </property>
-             <property name="text">
-              <string>搜索</string>
-             </property>
-             <property name="checkable">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="backBtn">
-             <property name="focusPolicy">
-              <enum>Qt::StrongFocus</enum>
-             </property>
-             <property name="text">
-              <string>上一级</string>
-             </property>
-             <property name="checkable">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QPushButton" name="logoutBtn">
-       <property name="geometry">
-        <rect>
-         <x>1220</x>
-         <y>0</y>
-         <width>75</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::StrongFocus</enum>
-       </property>
-       <property name="text">
-        <string>登出</string>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </widget>
-    </item>
-   </layout>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QPushButton" name="queryBtn">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="text">
+            <string>搜索</string>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="backBtn">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="text">
+            <string>上一级</string>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="logoutBtn">
+     <property name="geometry">
+      <rect>
+       <x>1220</x>
+       <y>0</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="text">
+      <string>登出</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <customwidgets>
   <customwidget>

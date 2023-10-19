@@ -12,6 +12,8 @@
 #include<QAbstractItemView>
 #include<QMessageBox>
 #include<QCoreApplication>
+#include<login/logininwidget.h>
+#include<QTimer>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -23,9 +25,9 @@ MainWindow::MainWindow(QWidget *parent)
     this->initListWidget();
     //初始化分页
     this->initStackedWidget();
-    // 连接button的clicked信号到槽函数on_button_clicked
+    //按下展示按钮展示图片
     connect(ui->showBtn, &QPushButton::clicked, this, &MainWindow::buttonClicked);
-    //链接登出按钮
+    //按下登出按钮发送登出信号
     connect(ui->logoutBtn,&QPushButton::clicked,[=](){
         emit this->LogoutSignal();
         this->close();
@@ -40,7 +42,7 @@ void MainWindow::checkSelection()
     //选择了日期，根据日期添加次数下拉框的内容
     if(ui->dateComboBox->currentIndex()!=0)
     {
-        //只有一个选项才会添加
+        //防止重复添加下拉框内容
         if(ui->comboBox1->count() <= 1)
         {
             QString date = ui->dateComboBox->currentText();
@@ -68,7 +70,7 @@ void MainWindow::checkSelection()
         ui->showBtn->setEnabled(false);
     }
 }
-
+//展示图片
 void MainWindow::buttonClicked()
 {
     QString fileName = this->chooseFilePath;
@@ -89,6 +91,8 @@ void MainWindow::buttonClicked()
 //接受登录信号显示窗口
 void MainWindow::receiveLogin()
 {
+    LoginInWidget l;
+    l.show();
     this->show();
 }
 //搜索文件
