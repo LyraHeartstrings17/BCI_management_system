@@ -12,6 +12,7 @@ SOURCES += \
     gamefinishwidget/radar.cpp \
     login/jsonoperation.cpp \
     login/login.cpp \
+    login/logininwidget.cpp \
     login/register.cpp \
     login/register_info.cpp \
     main.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     login/UserInfoStruct.h \
     login/jsonoperation.h \
     login/login.h \
+    login/logininwidget.h \
     login/register.h \
     login/register_info.h \
     mainwindow.h \
@@ -32,6 +34,7 @@ FORMS += \
     gamefinishwidget/gamefinishwidget.ui \
     gamefinishwidget/radar.ui \
     login/login.ui \
+    login/logininwidget.ui \
     login/register.ui \
     login/register_info.ui \
     mainwindow.ui \  
