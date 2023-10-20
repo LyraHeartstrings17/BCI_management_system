@@ -40,7 +40,7 @@
   <customwidget>
    <class>Radar</class>
    <extends>QWidget</extends>
-   <header>radar.h</header>
+   <header location="global">radar.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

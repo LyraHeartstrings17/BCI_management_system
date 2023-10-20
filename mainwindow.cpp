@@ -1,3 +1,4 @@
+﻿#pragma execution_character_set("utf-8")//防止乱码
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include<QPushButton>
@@ -12,8 +13,8 @@
 #include<QAbstractItemView>
 #include<QMessageBox>
 #include<QCoreApplication>
-#include<login/logininwidget.h>
 #include<QTimer>
+#include<QDebug>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -91,8 +92,6 @@ void MainWindow::buttonClicked()
 //接受登录信号显示窗口
 void MainWindow::receiveLogin()
 {
-    LoginInWidget l;
-    l.show();
     this->show();
 }
 //搜索文件
@@ -145,7 +144,7 @@ void MainWindow::initListWidget()
     }
     //按下搜索按钮触发搜索事件
     connect(ui->queryBtn, &QPushButton::clicked, this, &MainWindow::queryData);
-    //qDebug()<<this->ListWidgetItems;
+    qDebug()<<this->ListWidgetItems;
     //单击文件查看进行选择
     connect(ui->listWidget,&QListWidget::itemClicked,[=](QListWidgetItem *item){
         //重置下拉框防止重复添加下拉框内容
@@ -178,9 +177,9 @@ void MainWindow::initComboBox()
     ui->comboBox2->addItem("注意力指标");
     ui->comboBox2->addItem("游戏结算数据");
     //下拉框状态改变时判断是否能显示图片
-    connect(ui->comboBox1, &QComboBox::activated, this, &MainWindow::checkSelection);
-    connect(ui->comboBox2, &QComboBox::activated, this, &MainWindow::checkSelection);
-    connect(ui->dateComboBox, &QComboBox::activated, this, &MainWindow::checkSelection);
+    connect(ui->comboBox1,QOverload<int>::of(&QComboBox::activated), this, &MainWindow::checkSelection);
+    connect(ui->comboBox2, QOverload<int>::of(&QComboBox::activated), this, &MainWindow::checkSelection);
+    connect(ui->dateComboBox, QOverload<int>::of(&QComboBox::activated), this, &MainWindow::checkSelection);
     //初始时显示图片btn无法点击
     ui->showBtn->setEnabled(false);
 }
@@ -195,7 +194,7 @@ void MainWindow::resetComboBox()
 void MainWindow::initStackedWidget()
 {
     ui->stackedWidget->setCurrentIndex(0);
-    connect(ui->comboBox2, &QComboBox::activated,[=](){
+    connect(ui->comboBox2, QOverload<int>::of(&QComboBox::activated),[=](){
         if(ui->comboBox2->currentIndex())//下拉框不是默认才触发
         {
             ui->stackedWidget->setCurrentIndex(ui->comboBox2->currentIndex()-1);

@@ -314,7 +314,7 @@
   <customwidget>
    <class>GameFinishWidget</class>
    <extends>QWidget</extends>
-   <header>gamefinishwidget.h</header>
+   <header location="global">gamefinishwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
