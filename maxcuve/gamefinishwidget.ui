@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>287</width>
+    <width>400</width>
     <height>420</height>
    </rect>
   </property>
@@ -19,22 +19,34 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="spacing">
-    <number>0</number>
-   </property>
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
-    <number>0</number>
-   </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="radar_layout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="Radar" name="periceive_radar" native="true">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Radar" name="emotion_radar" native="true">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
    <item>
     <layout class="QVBoxLayout" name="curve_layout">
      <property name="spacing">
@@ -51,11 +63,6 @@
          <height>0</height>
         </size>
        </property>
-       <property name="font">
-        <font>
-         <family>Adobe 宋体 Std L</family>
-        </font>
-       </property>
       </widget>
      </item>
     </layout>
@@ -67,6 +74,12 @@
    <class>Curve</class>
    <extends>QWidget</extends>
    <header>curve.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Radar</class>
+   <extends>QWidget</extends>
+   <header>radar.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -12,16 +12,19 @@ SOURCES += \
     curve.cpp \
     gamefinishdata.cpp \
     gamefinishwidget.cpp \
-    main.cpp
+    main.cpp \
+    radar.cpp
 
 HEADERS += \
     curve.h \
     gamefinishdata.h \
-    gamefinishwidget.h
+    gamefinishwidget.h \
+    radar.h
 
 FORMS += \
     curve.ui \
-    gamefinishwidget.ui
+    gamefinishwidget.ui \
+    radar.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

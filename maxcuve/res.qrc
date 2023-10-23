@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>res/curve.qml</file>
+        <file>res/radar.qml</file>
     </qresource>
 </RCC>

@@ -1,6 +1,6 @@
 ﻿#include <QApplication>
 #include "gamefinishwidget.h"
-//#include"gamefinishdata.h"
+#include"gamefinishdata.h"
 
 #include "QDebug"
 int main(int args,char** argv)
@@ -9,10 +9,10 @@ int main(int args,char** argv)
 
     GameFinishWidget w;
     //选择单次的数据文件夹
-    w.setGameFilePath("E:\\ddd\\qtprogram\\GameFinishWidget\\result\\1");
+    //w.setGameFilePath("E:\\ddd\\qtprogram\\GameFinishWidget\\result\\1");
 
 //    w.showWidget();
-    char directory[] = "E:\\ddd\\program\\radatu\\GameFinishWidget\\result\\";
+    char directory[] = "C:\\Users\\Dell\\Desktop\\BCI_management_system-das\\数据\\雷达数据\\";
     int i;
     char folder_name[10];
     char full_path[100];
@@ -23,7 +23,9 @@ int main(int args,char** argv)
         w.setGameFilePath(full_path);
         w.showWidget();
         //        printf("访问文件夹：%s\n", full_path); // 示例：打印访问的文件夹路径
+
     }
+    w.showRadarWidget();
     w.show();
 
     app.exec();

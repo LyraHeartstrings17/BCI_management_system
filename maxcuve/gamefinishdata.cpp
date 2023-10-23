@@ -86,6 +86,20 @@ bool  GameFinishData::readGameFile(QString name)
     {
         emotion_max_value=emotion_value;
         periceive_max_value=periceive_value;
+        if(emotion_max_value_all.isEmpty())
+        {
+            emotion_max_value_all=emotion_value;
+            periceive_max_value_all=periceive_value;
+
+        }
+        else{
+            for(int i=0;i<5;i++)
+            {
+
+                emotion_max_value_all[i]=emotion_max_value_all[i]>emotion_value[i]?emotion_max_value_all[i]:emotion_value[i];
+                periceive_max_value_all[i]=periceive_max_value_all[i]>periceive_value[i]?periceive_max_value_all[i]:periceive_value[i];
+            }
+        }
     }
     else
     {
@@ -93,6 +107,8 @@ bool  GameFinishData::readGameFile(QString name)
         {
             emotion_max_value[i]=emotion_max_value[i]>emotion_value[i]?emotion_max_value[i]:emotion_value[i];
             periceive_max_value[i]=periceive_max_value[i]>periceive_value[i]?periceive_max_value[i]:periceive_value[i];
+            emotion_max_value_all[i]=emotion_max_value_all[i]>emotion_value[i]?emotion_max_value_all[i]:emotion_value[i];
+            periceive_max_value_all[i]=periceive_max_value_all[i]>periceive_value[i]?periceive_max_value_all[i]:periceive_value[i];
         }
     }
     file.close();
@@ -110,6 +126,24 @@ QList<double>GameFinishData::getPericeiveValue()
     QList<double> value=periceive_max_value;
     periceive_max_value.clear();
     return value;
+}
+QList<double>GameFinishData::getallEmotionValue()
+{
+    QList<double> value=emotion_max_value_all;
+
+//    emotion_max_value.clear();
+    return value;
+}
+QList<double>GameFinishData::getallPericeiveValue()
+{
+    QList<double> value=periceive_max_value_all;
+//    periceive_max_value.clear();
+    return value;
+}
+
+void GameFinishData::clearValue(){
+    periceive_max_value_all.clear();
+    emotion_max_value_all.clear();
 }
 
 void GameFinishData::saveFinishData()

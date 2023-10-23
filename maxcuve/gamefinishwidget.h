@@ -21,7 +21,7 @@ public:
     void setPericeiveRadar(QList<double> data);
     void appendEmotionCurve(QList<double> data);
     void appendPericeiveCurve(QList<double> data);
-
+    void showRadarWidget();
 private:
     Ui::GameFinishWidget *ui;
     void init();

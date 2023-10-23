@@ -14,9 +14,13 @@ public:
 
     void traverseFolders(const QString& folderPath);
 
+    void clearValue();
+
     bool  readGameFile(QString name);
     QList<double> getEmotionValue();
     QList<double> getPericeiveValue();
+    QList<double> getallEmotionValue();
+    QList<double> getallPericeiveValue();
     void  saveFinishData();
     int getTrainTime() const;
 
@@ -26,6 +30,8 @@ private:
     QString bci_save_path;
     QList<double> emotion_max_value;
     QList<double> periceive_max_value;
+    QList<double> emotion_max_value_all;
+    QList<double> periceive_max_value_all;
 };
 
 #endif // GAMEFINISHDATA_H

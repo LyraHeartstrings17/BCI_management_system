@@ -45,12 +45,12 @@ void MAT::stop()
     //关闭mat文件指针
     Mat_Close(mat_fp);
     mat_fp=NULL;
-//    QString filePath="E:\\ddd\\program\\data\\数据\\脑电数据";
-//    if (QFile::copy("text.mat", filePath)) {
-//        qDebug() << "File saved successfully.";
-//    } else {
-//        qDebug() << "Failed to save the file.";
-//    }
+    //    QString filePath="E:\\ddd\\program\\data\\数据\\脑电数据";
+    //    if (QFile::copy("text.mat", filePath)) {
+    //        qDebug() << "File saved successfully.";
+    //    } else {
+    //        qDebug() << "Failed to save the file.";
+    //    }
 
 }
 void MAT::saveChanlocs(QVariantList chanlocs)
@@ -107,14 +107,14 @@ void MAT::saveChanlocs(QVariantList chanlocs)
 }
 void MAT::saveFileName(QString name)
 {
-   QFileInfo info(name);
-   name=info.fileName();
-   int len=name.size();
-   size_t dim[2];
-   dim[0]=1;
-   dim[1]=len;
-   matvar_t *filename_field=Mat_VarCreate(NULL,MAT_C_CHAR,MAT_T_UTF8,2,dim,name.toUtf8().data(),0);
-   Mat_VarSetStructFieldByName(eeg_struct,"filename",0,filename_field);
+    QFileInfo info(name);
+    name=info.fileName();
+    int len=name.size();
+    size_t dim[2];
+    dim[0]=1;
+    dim[1]=len;
+    matvar_t *filename_field=Mat_VarCreate(NULL,MAT_C_CHAR,MAT_T_UTF8,2,dim,name.toUtf8().data(),0);
+    Mat_VarSetStructFieldByName(eeg_struct,"filename",0,filename_field);
 }
 
 void MAT::saveSrate(quint16 rate)
@@ -165,7 +165,7 @@ void MAT::saveEevent(QVariantList event)
             {
                 size_t dim[2]={1,1};
                 int data=value.value<int>();
-                 matvar_t *field = Mat_VarCreate(NULL,MAT_C_UINT32,MAT_T_UINT32,2,dim,&data,0);
+                matvar_t *field = Mat_VarCreate(NULL,MAT_C_UINT32,MAT_T_UINT32,2,dim,&data,0);
                 Mat_VarSetStructFieldByName(event_field,key.toUtf8().data(),index,field);
             }
         }
