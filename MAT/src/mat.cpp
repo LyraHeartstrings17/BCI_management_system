@@ -45,13 +45,6 @@ void MAT::stop()
     //关闭mat文件指针
     Mat_Close(mat_fp);
     mat_fp=NULL;
-    //    QString filePath="E:\\ddd\\program\\data\\数据\\脑电数据";
-    //    if (QFile::copy("text.mat", filePath)) {
-    //        qDebug() << "File saved successfully.";
-    //    } else {
-    //        qDebug() << "Failed to save the file.";
-    //    }
-
 }
 void MAT::saveChanlocs(QVariantList chanlocs)
 {

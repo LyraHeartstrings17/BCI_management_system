@@ -5,38 +5,11 @@ int main()
 {
     MAT mat;
 
-    mat_t *matfp = Mat_Open("E:/ddd/program/data/数据/脑电数据/lx_20230908170117_123_2.mat", MAT_ACC_RDONLY);
-    if (matfp == NULL) {
-        // 处理打开MAT文件失败的情况
-        qDebug()<<'4';
-    }
-
-    matvar_t *matvar = Mat_VarRead(matfp, "data");
-    if (matvar == NULL) {
-        // 处理读取变量失败的情况
-        qDebug()<<'3';
-    }
-
-    int status = Mat_VarReadDataAll(matfp, matvar);
-    if (status != 0) {
-        // 处理读取数据失败的情况
-        qDebug()<<'2';
-    }
-
-    // 打印读取到的数据
-    double *d = (double *)matvar->data;
-    int numElements = matvar->nbytes / sizeof(double);
-    for (int i = 0; i < numElements; i++) {
-        printf("%f ", d[i]);
-    }
-    printf("\n");
-
-    Mat_VarFree(matvar);
-    Mat_Close(matfp);
 
 
 
-    mat.setFileName("text.mat");
+
+    mat.setFileName("E:/ddd/gitp/bci/MAT/ttt.mat");
     mat.setChannelNum(2);
     mat.saveSrate(1000);
     mat.saveAge(18);
