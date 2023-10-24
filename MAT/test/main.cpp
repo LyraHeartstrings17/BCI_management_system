@@ -8,7 +8,6 @@ int main()
 
 
 
-
     mat.setFileName("E:/ddd/gitp/bci/MAT/ttt.mat");
     mat.setChannelNum(2);
     mat.saveSrate(1000);
@@ -40,5 +39,6 @@ int main()
 
     free(data);
     mat.stop();
-
+//    mat.openMatFile("E:/ddd/gitp/bci/MAT/ttt.mat");
+    mat.readData("E:/ddd/gitp/bci/MAT/lx_20230908170117_123_2.mat");
 }

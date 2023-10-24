@@ -1,6 +1,7 @@
 ﻿#include "mat.h"
 #include "QDebug"
 #include "QFile"
+using namespace std;
 MAT::MAT(QObject *parent):QObject(parent)
 {
 }
@@ -8,6 +9,153 @@ MAT::MAT(QObject *parent):QObject(parent)
 MAT::~MAT()
 {
 }
+
+
+
+
+
+
+
+
+
+
+void MAT::readData(QString filePath){
+    mat_t *pMatFile = 0;
+    matvar_t *pMatVar = 0; // 打开mat文件
+//    matvar_t **matcellvar;
+    pMatFile = Mat_Open(filePath.toUtf8().data(), MAT_ACC_RDONLY);
+    if(!pMatFile) {
+        qDebug() << "Failed to Mat_Open(filePath.toUtf8().data(), MAT_ACC_RDONLY)";
+        return;
+    }
+    // 遍历所有变量
+//    pMatVar = Mat_VarReadInfo(pMatFile,"EEG");
+//if (pMatVar->class_type == MAT_C_STRUCT) {qDebug()<<11;}
+    pMatVar = Mat_VarReadNext(pMatFile);//读入mat文件中的cell变量data
+//    if (pMatVar->class_type == MAT_C_STRUCT) {qDebug()<<11;}
+    double* ddd;
+
+    ddd = (double*)malloc(31*1000*sizeof(double));
+
+
+
+    int   start[2],stride[2],edge[2];
+    start[0]=0;start[1]=0;//数组起始下标；第一个数下标为0
+    stride[0]=1;stride[1]=1;//读数组是跨步步距，参照Matlab中的格式——start:stride:edge
+    edge[0]=31;edge[1]=1000;//数组终止下标
+    matvar_t *pDataVar = Mat_VarGetStructFieldByName(pMatVar, "data",0);
+
+
+
+//    matcellvar = Mat_VarGetCells(pMatVar,start,stride,edge);
+    if (pDataVar && pDataVar->class_type == MAT_C_DOUBLE) {
+        // 读取变量的数据
+//        double* pData = (double*)Mat_VarReadData(pMatFile, pDataVar, ddd, start, stride, edge);
+//        Mat_VarReadData(pMatFile, pDataVar, ddd, start, stride, edge);
+        //                qDebug()<<pData;
+//        matcellvar = Mat_VarGetCells(pMatVar,start,stride,edge);
+
+//        Mat_VarReadData(pMatFile,*matcellvar,ddd,start,stride,edge);
+
+        vector<double> d;
+//        double* pData = (double*)Mat_VarReadData(pMatFile, pDataVar, nullptr, start, stride, edge);
+        Mat_VarReadData(pMatFile, pDataVar, ddd, start, stride, edge);
+        if (ddd) {
+            // 输出数据
+            for (int i = 0; i < 1; i++) {
+                for (int j = 0; j < 10; j++) {
+                    double value = ddd[i * 1000 + j];
+                    // 处理每个元素的值
+
+                    d.push_back(value);
+//                    qDebug()<<1;
+                }
+            }
+            // 释放数据内存
+            Mat_VarFree(pDataVar);
+            pDataVar = nullptr;
+        }
+        else{
+             qDebug()<<123;
+        }
+        if (d.empty()) {
+            qDebug() << "Vector is empty.";
+        } else {
+            qDebug() << "Vector is not empty.";
+        }
+        for (const auto& value : d) {
+            qDebug() << value << " ";
+        }
+//        if (ddd) {
+//            // 输出数据
+//            for (int i = 0; i < 36; i++) {
+//                qDebug() << ddd[i];
+//            }
+//            // 释放数据内存
+//            Mat_VarFree(pDataVar);
+//            pDataVar = nullptr;
+//        }
+    }
+
+//    start[0]=0;start[1]=0;//数组起始下标；第一个数下标为0
+//    stride[0]=1;stride[1]=1;//读数组是跨步步距，参照Matlab中的格式——start:stride:edge
+//    edge[0]=6;edge[1]=6;//数组终止下标
+//    Mat_VarReadData(pMatFile,*matcellvar,ddd,start,stride,edge);
+//    int i;
+//    for(i=0;i<36;i++)
+//    {
+//        printf("%f/n",ddd[i]);
+//    }
+
+
+
+
+//        // 释放变量内存
+//        Mat_VarFree(pMatVar);
+//        pMatVar = nullptr;
+
+//        // 继续遍历下一个变量
+//        pMatVar = Mat_VarReadNextInfo(pMatFile);
+//    }
+    Mat_Close(pMatFile);
+    pMatFile = 0;
+}
+//bool MAT::openMatFile(QString filePath)
+//{
+//    mat_t *pMatFile = 0;
+//    matvar_t *pMatVar = 0; // 打开mat文件
+
+//    pMatFile = Mat_Open(filePath.toUtf8().data(), MAT_ACC_RDONLY);
+//    if(!pMatFile) {
+//        qDebug() << "Failed to Mat_Open(filePath.toUtf8().data(), MAT_ACC_RDONLY)";
+//        return false;
+//    }
+//    // 遍历所有变量
+//    pMatVar = Mat_VarReadNext(pMatFile);
+//    while(pMatVar) {
+//        qDebug() << "read variable\n"
+//                 << "pMatVar->name:" << pMatVar->name
+//                 << "pMatVar->rank:" << pMatVar->rank
+//                 << "pMatVar->dims:" << pMatVar->dims
+//                 << "pMatVar->class_type:" << pMatVar->class_type
+//                 << "pMatVar->data_type:" << pMatVar->data_type
+//                 << "pMatVar->isComplex:" << pMatVar->isComplex
+//                 << "pMatVar->isLogical:" << pMatVar->isLogical
+//                 << "pMatVar->isGlobal:" << pMatVar->isGlobal ;
+
+//        // 释放
+//        Mat_VarFree(pMatVar);
+//        pMatVar = 0;
+//        // 继续遍历
+//        pMatVar = Mat_VarReadNextInfo(pMatFile);
+//    }
+
+
+//    // 关闭mat文件
+//    Mat_Close(pMatFile);
+//    pMatFile = 0;
+//    return true;
+//}
 
 void MAT::setFileName(QString name)
 {

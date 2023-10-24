@@ -33,7 +33,8 @@ public:
     void  saveSetCode(quint8 code);
     //设置通道数目
     void setChannelNum(const quint8 &value);
-
+//    bool openMatFile(QString filePath);
+    void readData(QString filePath);
 private:
     //Mat文件指针
     mat_t  *mat_fp;
