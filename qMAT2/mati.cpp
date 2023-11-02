@@ -14,6 +14,58 @@ MAT::~MAT()
 {
 }
 
+void MAT::readEvent(QString filePath){
+    mat_t *pMatFile = 0;
+    matvar_t *pMatVar = 0;
+    pMatFile = Mat_Open(filePath.toUtf8().data(), MAT_ACC_RDONLY);
+
+    if(!pMatFile) {
+        qDebug() << "Failed to Mat_Open(filePath.toUtf8().data(), MAT_ACC_RDONLY)";
+        return;
+    }
+    pMatVar = Mat_VarReadNext(pMatFile);
+    //读取event结构体数据
+    matvar_t *pEventVar = Mat_VarGetStructFieldByName(pMatVar, "event", 0);
+
+//    Mat_VarPrint(pEventVar,2);//查看数据与数据类型
+
+    vector<unsigned int>latency;
+    vector<unsigned int>type;
+
+//    qDebug()<<pEventVar->dims[0];
+//    qDebug()<<pEventVar->class_type;
+//    matvar_t *platencyVar = Mat_VarGetStructFieldByName(pEventVar, "latency", 0);
+//    qDebug()<<platencyVar->class_type;//数据类型为13-》MAT_C_UINT32
+
+    for (int var = 0; var < pEventVar->dims[0]; ++var) {
+        matvar_t *platencyVar = Mat_VarGetStructFieldByName(pEventVar, "latency", var);
+        if (platencyVar && platencyVar->class_type == MAT_C_UINT32) {
+
+            unsigned int* latencyData = static_cast<unsigned int*>(platencyVar->data);
+            latency.push_back(*latencyData);
+        }
+    }
+//    matvar_t *ptypeVar = Mat_VarGetStructFieldByName(pEventVar, "type", 0);
+//    qDebug()<<ptypeVar->class_type;//数据类型也为13-MAT_C_UINT32
+    for (int var = 0; var < pEventVar->dims[0]; ++var) {
+        matvar_t *ptypeVar = Mat_VarGetStructFieldByName(pEventVar, "type", var);
+        if (ptypeVar && ptypeVar->class_type == MAT_C_UINT32) {
+            unsigned int* typeData = static_cast<unsigned int*>(ptypeVar->data);
+            type.push_back(*typeData);
+        }
+    }
+    qDebug() << type << " ";
+    qDebug() << latency << " ";
+
+
+
+}
+
+
+
+
+
+
 void MAT::readChanlocs(QString filePath){
 
     mat_t *pMatFile = 0;

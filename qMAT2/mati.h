@@ -37,7 +37,7 @@ public:
     void readData(QString filePath);
 
     void readChanlocs(QString filePath);
-
+    void readEvent(QString filePath);
 
 private:
     //Mat文件指针
