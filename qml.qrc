@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/loggingin.qml</file>
+        <file>res/radar.qml</file>
+        <file>res/curve.qml</file>
+    </qresource>
+</RCC>
