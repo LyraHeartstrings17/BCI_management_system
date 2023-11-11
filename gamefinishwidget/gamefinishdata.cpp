@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+﻿//#pragma execution_character_set("utf-8")//防止乱码
+#include "gamefinishdata.h"
+=======
 ﻿#include "gamefinishdata.h"
+>>>>>>> 6618c4e4f0412b5ffa1e5ebebc39a0de6cfef416
 #include "QFile"
 #include "QDir"
 #include "QDebug"
@@ -10,7 +15,10 @@ GameFinishData::GameFinishData(QObject *parent) : QObject(parent)
 {
 
     //game文件保存位置初始化
+<<<<<<< HEAD
+=======
     this->bci_save_path="C:/Users/10781/Desktop/雷达数据";
+>>>>>>> 6618c4e4f0412b5ffa1e5ebebc39a0de6cfef416
 }
 
 void GameFinishData::setPath(QString path)
@@ -35,9 +43,13 @@ void GameFinishData::readGameFinishData()
             readGameFile(file);
         }
         saveFinishData();
+<<<<<<< HEAD
+    }
+=======
 
     }
 
+>>>>>>> 6618c4e4f0412b5ffa1e5ebebc39a0de6cfef416
 }
 
 bool  GameFinishData::readGameFile(QString name)
@@ -86,6 +98,23 @@ bool  GameFinishData::readGameFile(QString name)
     {
         emotion_max_value=emotion_value;
         periceive_max_value=periceive_value;
+<<<<<<< HEAD
+        if(emotion_max_value_all.isEmpty())
+        {
+            emotion_max_value_all=emotion_value;
+            periceive_max_value_all=periceive_value;
+
+        }
+        else{
+            for(int i=0;i<5;i++)
+            {
+
+                emotion_max_value_all[i]=emotion_max_value_all[i]>emotion_value[i]?emotion_max_value_all[i]:emotion_value[i];
+                periceive_max_value_all[i]=periceive_max_value_all[i]>periceive_value[i]?periceive_max_value_all[i]:periceive_value[i];
+            }
+        }
+=======
+>>>>>>> 6618c4e4f0412b5ffa1e5ebebc39a0de6cfef416
     }
     else
     {
@@ -93,6 +122,11 @@ bool  GameFinishData::readGameFile(QString name)
         {
             emotion_max_value[i]=emotion_max_value[i]>emotion_value[i]?emotion_max_value[i]:emotion_value[i];
             periceive_max_value[i]=periceive_max_value[i]>periceive_value[i]?periceive_max_value[i]:periceive_value[i];
+<<<<<<< HEAD
+            emotion_max_value_all[i]=emotion_max_value_all[i]>emotion_value[i]?emotion_max_value_all[i]:emotion_value[i];
+            periceive_max_value_all[i]=periceive_max_value_all[i]>periceive_value[i]?periceive_max_value_all[i]:periceive_value[i];
+=======
+>>>>>>> 6618c4e4f0412b5ffa1e5ebebc39a0de6cfef416
         }
     }
     file.close();
@@ -111,6 +145,27 @@ QList<double>GameFinishData::getPericeiveValue()
     periceive_max_value.clear();
     return value;
 }
+<<<<<<< HEAD
+QList<double>GameFinishData::getallEmotionValue()
+{
+    QList<double> value=emotion_max_value_all;
+
+//    emotion_max_value.clear();
+    return value;
+}
+QList<double>GameFinishData::getallPericeiveValue()
+{
+    QList<double> value=periceive_max_value_all;
+//    periceive_max_value.clear();
+    return value;
+}
+
+void GameFinishData::clearValue(){
+    periceive_max_value_all.clear();
+    emotion_max_value_all.clear();
+}
+=======
+>>>>>>> 6618c4e4f0412b5ffa1e5ebebc39a0de6cfef416
 
 void GameFinishData::saveFinishData()
 {

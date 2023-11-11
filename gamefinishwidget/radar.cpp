@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+﻿//#pragma execution_character_set("utf-8")//防止乱码
+#include "radar.h"
+=======
 ﻿#include "radar.h"
+>>>>>>> 6618c4e4f0412b5ffa1e5ebebc39a0de6cfef416
 #include "ui_radar.h"
 
 Radar::Radar(QWidget *parent) :
@@ -8,7 +13,11 @@ Radar::Radar(QWidget *parent) :
     ui->setupUi(this);
     QUrl source("qrc:/res/radar.qml");
     ui->quickWidget->setSource(source);
+<<<<<<< HEAD
+    //this->setFixedWidth(200);
+=======
     this->setFixedWidth(300);
+>>>>>>> 6618c4e4f0412b5ffa1e5ebebc39a0de6cfef416
 }
 
 Radar::~Radar()

@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/Icon/8666551_play_circle_icon.png</file>
+        <file>res/Icon/8666613_repeat_icon.png</file>
+        <file>res/Icon/8666634_play_icon.png</file>
+        <file>res/Icon/8666635_refresh_ccw_icon.png</file>
+        <file>res/Icon/8666818_disc_cd_dvd_icon.png</file>
+        <file>res/Icon/509ea1ea46464dbe8390c60702de287f.jpg</file>
+        <file>res/Icon/7928.png_860.png</file>
+        <file>res/Icon/7211795.gif</file>
+        <file>res/Icon/8666572_zoom_in_icon.png</file>
+        <file>res/Icon/8666655_arrow_left_circle_icon.png</file>
+        <file>res/Icon/8666670_arrow_right_circle_icon.png</file>
+        <file>res/Icon/8666692_power_icon.png</file>
+        <file>res/Icon/8666719_share_icon.png</file>
+        <file>res/Icon/8666721_rotate_ccw_icon.png</file>
+        <file>res/Icon/8948330.png</file>
+        <file>res/Icon/8666549_pause_circle_icon.png</file>
+        <file>res/Icon/8666571_log_out_icon.png</file>
+        <file>res/Icon/8666693_search_icon.png</file>
+        <file>res/Icon/8666687_upload_cloud_icon.png</file>
+    </qresource>
+</RCC>

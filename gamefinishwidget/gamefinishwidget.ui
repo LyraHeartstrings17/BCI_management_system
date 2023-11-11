@@ -6,6 +6,113 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
+    <width>1221</width>
+    <height>571</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="200,1">
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="Radar" name="emotion_radar" native="true">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Radar" name="periceive_radar" native="true">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="Curve" name="emotion_curve" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Curve" name="periceive_curve" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="switchButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>切换</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+=======
     <width>504</width>
     <height>410</height>
    </rect>
@@ -32,15 +139,28 @@
        <height>16777215</height>
       </size>
      </property>
+>>>>>>> 6618c4e4f0412b5ffa1e5ebebc39a0de6cfef416
     </widget>
    </item>
   </layout>
  </widget>
  <customwidgets>
   <customwidget>
+<<<<<<< HEAD
+   <class>Curve</class>
+   <extends>QWidget</extends>
+   <header>curve.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Radar</class>
+   <extends>QWidget</extends>
+   <header>radar.h</header>
+=======
    <class>Radar</class>
    <extends>QWidget</extends>
    <header location="global">radar.h</header>
+>>>>>>> 6618c4e4f0412b5ffa1e5ebebc39a0de6cfef416
    <container>1</container>
   </customwidget>
  </customwidgets>

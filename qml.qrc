@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>res/loggingin.qml</file>
         <file>res/radar.qml</file>
+<<<<<<< HEAD
+        <file>res/curve.qml</file>
+=======
+>>>>>>> 6618c4e4f0412b5ffa1e5ebebc39a0de6cfef416
     </qresource>
 </RCC>
