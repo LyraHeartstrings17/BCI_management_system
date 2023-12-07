@@ -6,315 +6,810 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1352</width>
-    <height>686</height>
+    <width>1747</width>
+    <height>1030</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">*{
+   <string notr="true">/*background-color:rgb(246, 243, 253);*/
+/*background-color: rgb(64, 162, 250);*/
 	font: 25 9pt &quot;Alibaba PuHuiTi 2.0&quot;;
-	color: rgb(118, 119, 121);
-}
+	/*color: rgb(118, 119, 121);*/
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <property name="styleSheet">
-    <string notr="true"/>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
-   <widget class="QFrame" name="frame_2">
-    <property name="geometry">
-     <rect>
-      <x>9</x>
-      <y>9</y>
-      <width>1334</width>
-      <height>668</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QFrame {
-	background-color: rgb(244, 242, 255)
-    border: 1px solid black;  /* 设置边框为黑色，边框宽度为1像素 */
-}</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QWidget" name="frame" native="true">
-     <property name="geometry">
-      <rect>
-       <x>320</x>
-       <y>30</y>
-       <width>971</width>
-       <height>591</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QWidget {
-    border: 1px solid black;  /* 设置边框为黑色，边框宽度为1像素 */
-	background-color: rgb(255, 255, 255);
-}</string>
-     </property>
-     <widget class="QPushButton" name="showBtn">
-      <property name="geometry">
-       <rect>
-        <x>440</x>
-        <y>510</y>
-        <width>90</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>展示</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="comboBox1">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>40</y>
-        <width>251</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="editable">
-       <bool>true</bool>
-      </property>
-      <property name="currentText">
-       <string>选择第几次测试结果</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>130</y>
-        <width>81</width>
-        <height>20</height>
-       </rect>
+   <property name="styleSheet">
+    <string notr="true">/*background-color:rgb(246, 243, 253);</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <item>
+     <widget class="QWidget" name="widget_8" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <property name="styleSheet">
-       <string notr="true">border:0px</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
-      </property>
-      <property name="text">
-       <string>雷达图</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>710</x>
-        <y>130</y>
-        <width>81</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border:0px</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
-      </property>
-      <property name="text">
-       <string>折线图</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="dateComboBox">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>40</y>
-        <width>281</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="editable">
-       <bool>true</bool>
-      </property>
-      <property name="currentText">
-       <string>选择被测日期</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="comboBox2">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>40</y>
-        <width>301</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="editable">
-       <bool>true</bool>
-      </property>
-      <property name="currentText">
-       <string>选择数据类型</string>
-      </property>
-     </widget>
-     <widget class="QStackedWidget" name="stackedWidget">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>160</y>
-        <width>891</width>
-        <height>341</height>
-       </rect>
-      </property>
-      <property name="currentIndex">
-       <number>2</number>
-      </property>
-      <widget class="QWidget" name="page_2">
-       <widget class="QLabel" name="label_3">
-        <property name="geometry">
-         <rect>
-          <x>280</x>
-          <y>110</y>
-          <width>301</width>
-          <height>101</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>脑电page</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="page_3">
-       <widget class="QLabel" name="label_4">
-        <property name="geometry">
-         <rect>
-          <x>290</x>
-          <y>110</y>
-          <width>261</width>
-          <height>101</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>注意力page</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="page">
-       <widget class="GameFinishWidget" name="radio_widget" native="true">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>10</y>
-          <width>821</width>
-          <height>321</height>
-         </rect>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-    </widget>
-    <widget class="QListWidget" name="listWidget">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>120</y>
-       <width>291</width>
-       <height>501</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QWidget" name="widget_2" native="true">
-     <property name="geometry">
-      <rect>
-       <x>14</x>
-       <y>20</y>
-       <width>301</width>
-       <height>88</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLineEdit" name="queryEdit">
-        <property name="styleSheet">
-         <string notr="true">QLineEdit {
-    border: 1px solid black;  /* 设置边框为红色，边框宽度为2像素 */
-    background-color: white; /* 设置背景颜色为蓝色 */
+       <string notr="true">QWidget{
+background-color:rgb(246, 243, 253);
+        border: 0px solid black;
+  border-radius: 20px; /* 设置四角的圆滑半径 */
 }</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QWidget" name="widget" native="true">
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <widget class="QPushButton" name="queryBtn">
-           <property name="focusPolicy">
-            <enum>Qt::StrongFocus</enum>
-           </property>
-           <property name="text">
-            <string>搜索</string>
-           </property>
-           <property name="checkable">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="backBtn">
-           <property name="focusPolicy">
-            <enum>Qt::StrongFocus</enum>
-           </property>
-           <property name="text">
-            <string>上一级</string>
-           </property>
-           <property name="checkable">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QPushButton" name="logoutBtn">
-     <property name="geometry">
-      <rect>
-       <x>1220</x>
-       <y>0</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::StrongFocus</enum>
-     </property>
-     <property name="text">
-      <string>登出</string>
-     </property>
-     <property name="checkable">
-      <bool>false</bool>
-     </property>
-    </widget>
-   </widget>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QFrame {
+	background-color: rgb(246, 243, 253)
+    border: 0px solid black;  /* 设置边框为黑色，边框宽度为1像素 */
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,15">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QWidget" name="widget_5" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/*background-color:rgb(246, 243, 253);*/
+background-color: rgb(108, 209, 239);
+border: 0px solid black;
+border-radius: 0px;</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="20,1">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="logoutBtn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+QPushButton {
+
+
+ 
+            text-align: left;
+            padding-left: 20px;
+ qproperty-icon: url(:/res/Icon/8666571_log_out_icon.png);
+       
+
+       
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+</string>
+               </property>
+               <property name="text">
+                <string>登出</string>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_6" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(108, 209, 239);
+/*background-color:rgb(246, 243, 253);*/
+border: 0px solid black;
+    border-radius: 0px;
+
+</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,4">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QWidget" name="widget_3" native="true">
+               <property name="styleSheet">
+                <string notr="true">/*background-color:rgb(246, 243, 253)*/
+background-color: rgb(31, 33, 45);
+ border-radius: 0px;
+
+</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout" stretch="1,8">
+                <property name="spacing">
+                 <number>6</number>
+                </property>
+                <property name="leftMargin">
+                 <number>9</number>
+                </property>
+                <property name="topMargin">
+                 <number>9</number>
+                </property>
+                <property name="rightMargin">
+                 <number>9</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>9</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="widget_2" native="true">
+                  <property name="styleSheet">
+                   <string notr="true">border: 0px solid black;</string>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout" stretch="6,1">
+                   <property name="leftMargin">
+                    <number>5</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLineEdit" name="queryEdit">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">text-align: left;          /* 文本水平对齐方式为左对齐 */
+padding-left: 20px;        /* 左侧内边距为 20 像素 */
+qproperty-icon: url(:/res/Icon/8666670_arrow_right_circle_icon.png);   /* 设置图标为给定路径下的图像 */
+       
+/*border-radius: 10px;*/   /* 注释掉，不应用圆角半径为 10 像素的效果 */
+padding: 5px;              /* 内边距为 5 像素 */
+background-color: white;   /* 背景颜色为白色 */
+color: black;              /* 文本颜色为黑色 */
+border: 1px solid gray;    /* 边框样式为 1 像素宽的灰色实线边框 */
+/* 设置阴影效果 */
+
+border-style: outset;      /* 边框样式为凸出效果 */
+border-width: 1px;         /* 边框宽度为 1 像素 */
+    
+padding: 4px;        /* 注释掉，不应用内边距为 4 像素的效果 */
+/*margin: 8px;   */            /* 外边距为 8 像素 */
+qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);   /* 设置阴影效果为 5 像素的偏移和指定的颜色值 */
+ border-radius: 20px; /* 设置四角的圆滑半径 */</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="widget" native="true">
+                     <layout class="QVBoxLayout" name="verticalLayout_2">
+                      <property name="spacing">
+                       <number>2</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QPushButton" name="queryBtn">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="focusPolicy">
+                         <enum>Qt::StrongFocus</enum>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">
+QPushButton {
+
+
+ 
+            text-align: left;
+            padding-left: 20px;
+ qproperty-icon: url(:/res/Icon/8666693_search_icon.png);
+       
+
+       
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+</string>
+                        </property>
+                        <property name="text">
+                         <string>搜索</string>
+                        </property>
+                        <property name="checkable">
+                         <bool>false</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="selectButton">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">
+QPushButton {
+
+
+ 
+            text-align: left;
+            padding-left: 20px;
+ qproperty-icon: url(:/res/Icon/8666687_upload_cloud_icon.png);
+       
+
+       
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+</string>
+                        </property>
+                        <property name="text">
+                         <string>选择文件夹</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QListWidget" name="listWidget">
+                  <property name="styleSheet">
+                   <string notr="true">border: 1px solid black;
+background-color: rgb(46, 48, 61);</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="frame" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QWidget {
+	background-color: rgb(235, 239, 240);
+	/*background-color: rgb(235, 239, 241);*/
+    border: 0px solid black;  /* 设置边框为黑色，边框宽度为1像素 */
+	/*background-color: rgb(246, 243, 253);*/
+}</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_3" stretch="2,25,1">
+                <property name="spacing">
+                 <number>30</number>
+                </property>
+                <property name="leftMargin">
+                 <number>9</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>9</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="widget_4" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border: 0 px solid black;
+background-color: rgb(255, 255, 255);</string>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="2,2,2">
+                   <property name="bottomMargin">
+                    <number>9</number>
+                   </property>
+                   <item>
+                    <widget class="QComboBox" name="dateComboBox">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">text-align: left;          /* 文本水平对齐方式为左对齐 */
+padding-left: 20px;        /* 左侧内边距为 20 像素 */
+qproperty-icon: url(:/res/Icon/8666670_arrow_right_circle_icon.png);   /* 设置图标为给定路径下的图像 */
+       
+/*border-radius: 10px;*/   /* 注释掉，不应用圆角半径为 10 像素的效果 */
+padding: 5px;              /* 内边距为 5 像素 */
+background-color: white;   /* 背景颜色为白色 */
+color: black;              /* 文本颜色为黑色 */
+border: 1px solid gray;    /* 边框样式为 1 像素宽的灰色实线边框 */
+/* 设置阴影效果 */
+
+border-style: outset;      /* 边框样式为凸出效果 */
+border-width: 1px;         /* 边框宽度为 1 像素 */
+    
+padding: 4px;        /* 注释掉，不应用内边距为 4 像素的效果 */
+/*margin: 8px;   */            /* 外边距为 8 像素 */
+qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);   /* 设置阴影效果为 5 像素的偏移和指定的颜色值 */
+ border-radius: 0px; /* 设置四角的圆滑半径 */</string>
+                     </property>
+                     <property name="editable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="currentText">
+                      <string>选择被测日期</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="comboBox1">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">text-align: left;          /* 文本水平对齐方式为左对齐 */
+padding-left: 20px;        /* 左侧内边距为 20 像素 */
+qproperty-icon: url(:/res/Icon/8666670_arrow_right_circle_icon.png);   /* 设置图标为给定路径下的图像 */
+       
+/*border-radius: 10px;*/   /* 注释掉，不应用圆角半径为 10 像素的效果 */
+padding: 5px;              /* 内边距为 5 像素 */
+background-color: white;   /* 背景颜色为白色 */
+color: black;              /* 文本颜色为黑色 */
+border: 1px solid gray;    /* 边框样式为 1 像素宽的灰色实线边框 */
+/* 设置阴影效果 */
+
+border-style: outset;      /* 边框样式为凸出效果 */
+border-width: 1px;         /* 边框宽度为 1 像素 */
+    
+padding: 4px;        /* 注释掉，不应用内边距为 4 像素的效果 */
+/*margin: 8px;   */            /* 外边距为 8 像素 */
+qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);   /* 设置阴影效果为 5 像素的偏移和指定的颜色值 */
+ border-radius: 0px; /* 设置四角的圆滑半径 */</string>
+                     </property>
+                     <property name="editable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="currentText">
+                      <string>选择第几次测试结果</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="comboBox2">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">text-align: left;          /* 文本水平对齐方式为左对齐 */
+padding-left: 20px;        /* 左侧内边距为 20 像素 */
+qproperty-icon: url(:/res/Icon/8666670_arrow_right_circle_icon.png);   /* 设置图标为给定路径下的图像 */
+       
+/*border-radius: 10px;*/   /* 注释掉，不应用圆角半径为 10 像素的效果 */
+padding: 5px;              /* 内边距为 5 像素 */
+background-color: white;   /* 背景颜色为白色 */
+color: black;              /* 文本颜色为黑色 */
+border: 1px solid gray;    /* 边框样式为 1 像素宽的灰色实线边框 */
+/* 设置阴影效果 */
+
+border-style: outset;      /* 边框样式为凸出效果 */
+border-width: 1px;         /* 边框宽度为 1 像素 */
+    
+padding: 4px;        /* 注释掉，不应用内边距为 4 像素的效果 */
+/*margin: 8px;   */            /* 外边距为 8 像素 */
+qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);   /* 设置阴影效果为 5 像素的偏移和指定的颜色值 */
+ border-radius: 0px; /* 设置四角的圆滑半径 */</string>
+                     </property>
+                     <property name="editable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="currentText">
+                      <string>选择数据类型</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QStackedWidget" name="stackedWidget">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color:rgb(255, 255, 255)</string>
+                  </property>
+                  <property name="currentIndex">
+                   <number>1</number>
+                  </property>
+                  <widget class="MatCurve" name="matWidget">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                  </widget>
+                  <widget class="AttentionWidget" name="attentionWidget">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                  </widget>
+                  <widget class="GameFinishWidget" name="finishWidget">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                  </widget>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_7" native="true">
+                  <property name="styleSheet">
+                   <string notr="true">border: 0px solid black;</string>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_5">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <spacer name="horizontalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="showBtn">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">
+QPushButton {
+
+
+ 
+            /*text-align: left;
+            padding-left: 20px;*/
+ qproperty-icon: url(:/res/Icon/8666818_disc_cd_dvd_icon.png);
+    min-width: 50px; max-width: 50px; min-height: 	50px; max-height: 50px; 
+     qproperty-iconSize: 70px; 
+    /*background-image: url(:/res/Icon/8666818_disc_cd_dvd_icon.png);  /* 设置背景图像路径 */
+    background-position: center center;  /* 将背景图像居中显示 */
+    background-repeat: no-repeat;  /* 禁止重复背景图像 */
+    padding: 0;  /* 清除按钮的内边距，确保图标居中 */
+
+       
+    border-radius: 30px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_3">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <customwidgets>
   <customwidget>
    <class>GameFinishWidget</class>
    <extends>QWidget</extends>
-   <header location="global">gamefinishwidget.h</header>
+   <header>gamefinfishwidget/gamefinishwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AttentionWidget</class>
+   <extends>QWidget</extends>
+   <header>attentionwidget/attentionwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MatCurve</class>
+   <extends>QWidget</extends>
+   <header>matcurve/matcurve.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -1,4 +1,5 @@
-﻿#include "register.h"
+﻿//#pragma execution_character_set("utf-8")//防止乱码
+#include "register.h"
 #include "ui_register.h"
 #include <QDebug>
 #include <QMessageBox>

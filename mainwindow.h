@@ -5,6 +5,9 @@
 #include<QTextEdit>
 #include <QMainWindow>
 #include<QVector>
+#include<attentionwidget/attentionwidget.h>
+#include<gamefinfishwidget/gamefinishwidget.h>
+#include<matcurve/matCurve.h>
 QT_BEGIN_NAMESPACE
 using namespace std;
 namespace Ui { class MainWindow; }
@@ -35,7 +38,8 @@ private:
     QString chooseFilePath;//要展示图像的路径
     int currentIndex1; // comboBox1的当前选择项索引
     int currentIndex2; // comboBox2的当前选择项索引
-    void initListWidget();//初始化ListWidget
+    int flag = 1;
+    void initListWidget(QString);//初始化ListWidget
     void initComboBox();//初始化ComboBox
     void resetComboBox();//重置ComboBox
     void initStackedWidget();//初始化StackedWidget

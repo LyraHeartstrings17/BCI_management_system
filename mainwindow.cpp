@@ -1,4 +1,4 @@
-﻿#pragma execution_character_set("utf-8")//防止乱码
+﻿//#pragma execution_character_set("utf-8")//防止乱码
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include<QPushButton>
@@ -15,15 +15,15 @@
 #include<QCoreApplication>
 #include<QTimer>
 #include<QDebug>
+#include<QFileDialog>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+//    this->setFixedSize(1600,800);
     ui->setupUi(this);
     //初始化下拉框
     this->initComboBox();
-    //初始化ListWidget
-    this->initListWidget();
     //初始化分页
     this->initStackedWidget();
     //按下展示按钮展示图片
@@ -32,6 +32,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->logoutBtn,&QPushButton::clicked,[=](){
         emit this->LogoutSignal();
         this->close();
+    });
+    //打开文件对话框选择脑电数据存放位置
+    connect(ui->selectButton,&QPushButton::clicked,[=](){
+        ui->listWidget->clear();
+        //初始化ListWidget
+        this->initListWidget(QFileDialog::QFileDialog::getExistingDirectory(this,"选择脑电数据存放的文件夹","C:\\Users\\10781\\Desktop",QFileDialog::ShowDirsOnly));
     });
 }
 
@@ -44,7 +50,7 @@ void MainWindow::checkSelection()
     if(ui->dateComboBox->currentIndex()!=0)
     {
         //防止重复添加下拉框内容
-        if(ui->comboBox1->count() <= 1)
+        if(ui->comboBox1->count() <= 2)
         {
             QString date = ui->dateComboBox->currentText();
             QString path = this->chooseFilePath;
@@ -59,11 +65,24 @@ void MainWindow::checkSelection()
         }
         if(ui->comboBox1->currentIndex()!=0 && ui->comboBox2->currentIndex()!=0)
         {
+            if(ui->comboBox2->currentText()=="脑电数据" && flag)
+            {
+                QMessageBox msgBox;
+                msgBox.setText("请先点击圆形按钮传入数据路径,再点击开始按钮开始绘图");
+                msgBox.setWindowTitle("提示");
+                msgBox.exec();
+                flag = 0;//只提示一次
+            }
             ui->showBtn->setEnabled(true);
         }
         else
         {
             ui->showBtn->setEnabled(false);
+        }
+        if(ui->comboBox1->currentIndex()==1)//选择了全部
+        {
+            ui->comboBox2->setCurrentIndex(3);
+            ui->showBtn->setEnabled(true);
         }
     }
     else
@@ -71,16 +90,50 @@ void MainWindow::checkSelection()
         ui->showBtn->setEnabled(false);
     }
 }
-//展示图片
 void MainWindow::buttonClicked()
 {
+    //清除上次画的曲线图避免重复画图
+    ui->finishWidget->clearcurveData();
     QString fileName = this->chooseFilePath;
-    fileName.append("/").append(ui->dateComboBox->currentText()).append("/").append(ui->comboBox1->currentText());
-    qDebug()<<fileName;
     if (!fileName.isEmpty())
     {
-        ui->radio_widget->setGameFilePath(fileName);
-        ui->radio_widget->showWidget();
+        //根据展示类型下拉框选择展示何种图片
+        if(ui->comboBox2->currentText()=="注意力指标")
+        {
+            fileName = fileName.append("/").append(ui->dateComboBox->currentText()).append("/").append(ui->comboBox1->currentText());
+            ui->attentionWidget->setGameFilePath(fileName);
+            ui->attentionWidget->setFinishFilePath(fileName);
+            ui->attentionWidget->showWidget();
+        }
+        else if(ui->comboBox2->currentText()=="游戏结算数据")
+        {
+            //读一整天的多次数据进行绘图
+            fileName = fileName.append("/").append(ui->dateComboBox->currentText());
+            ui->finishWidget->setFinishFilePath(fileName);
+            QDir dir(fileName);
+            QFileInfoList fileList = dir.entryInfoList(QDir::NoDotAndDotDot|QDir::Dirs);
+            for(int i=0;i<fileList.size();i++)
+            {
+                QFileInfo nameDirInfo = fileList.at(i);
+                ui->finishWidget->setGameFilePath(nameDirInfo.absoluteFilePath());
+                ui->finishWidget->showWidget();
+            }
+            ui->finishWidget->showRadarWidget();
+        }
+        else if(ui->comboBox2->currentText()=="脑电数据")
+        {
+            fileName = fileName.append("/").append(ui->dateComboBox->currentText()).append("/").append(ui->comboBox1->currentText());
+            //qDebug()<<fileName;
+            QDir dir(fileName);
+            //获取file文件夹中所有后缀名为“.mat”的文件，并转为QFileInfo保存到fileList中
+            QFileInfoList fileList = dir.entryInfoList(QStringList() << "*.mat");
+            for(auto fileInfo:fileList)
+            {
+                //输出文件的完整路径名
+                //qDebug() << fileInfo.absoluteFilePath();
+                ui->matWidget->setDataPath(fileInfo.absoluteFilePath());
+            }
+        }
     }
     else
     {
@@ -126,13 +179,13 @@ void MainWindow::queryData()
     }
 }
 //初始化ListWidget
-void MainWindow::initListWidget()
+void MainWindow::initListWidget(QString path)
 {
     //静态
     ui->listWidget->setMovement(QListView::Static);
     //横向布局
     ui->listWidget->setFlow(QListWidget::TopToBottom);
-    this->basePath = "C:/Users/10781/Desktop/雷达数据";
+    this->basePath = path;
     QDir dir(this->basePath);
     QFileInfoList fileList = dir.entryInfoList(QDir::NoDotAndDotDot|QDir::Dirs);  // 获取目录中的子目录列表，此时获取到的都是人名;
     //用于保存文件名
@@ -144,7 +197,7 @@ void MainWindow::initListWidget()
     }
     //按下搜索按钮触发搜索事件
     connect(ui->queryBtn, &QPushButton::clicked, this, &MainWindow::queryData);
-    qDebug()<<this->ListWidgetItems;
+    //qDebug()<<this->ListWidgetItems;
     //单击文件查看进行选择
     connect(ui->listWidget,&QListWidget::itemClicked,[=](QListWidgetItem *item){
         //重置下拉框防止重复添加下拉框内容
@@ -152,7 +205,7 @@ void MainWindow::initListWidget()
         QString path = this->basePath;
         path.append("/").append(item->text());
         this->chooseFilePath = path;
-        qDebug()<<this->chooseFilePath;
+        //qDebug()<<this->chooseFilePath;
         //根据选择人名文件夹的内容添加下拉框内容
         QDir d(this->chooseFilePath);
         QFileInfoList fileList = d.entryInfoList(QDir::NoDotAndDotDot|QDir::Dirs);
@@ -172,6 +225,7 @@ void MainWindow::initComboBox()
     // 添加选项文本
     ui->dateComboBox->addItem("被测日期");
     ui->comboBox1->addItem("被测次数");
+    ui->comboBox1->addItem("全部");
     ui->comboBox2->addItem("数据类型");
     ui->comboBox2->addItem("脑电数据");
     ui->comboBox2->addItem("注意力指标");
@@ -183,18 +237,20 @@ void MainWindow::initComboBox()
     //初始时显示图片btn无法点击
     ui->showBtn->setEnabled(false);
 }
+//重置下拉框
 void MainWindow::resetComboBox()
 {
     ui->dateComboBox->clear();
     ui->dateComboBox->addItem("被测日期");
     ui->comboBox1->clear();
     ui->comboBox1->addItem("被测次数");
+    ui->comboBox1->addItem("全部");
     ui->comboBox2->setCurrentIndex(0);
 }
 void MainWindow::initStackedWidget()
 {
     ui->stackedWidget->setCurrentIndex(0);
-    connect(ui->comboBox2, QOverload<int>::of(&QComboBox::activated),[=](){
+    connect(ui->comboBox2, QOverload<int>::of(&QComboBox::currentIndexChanged),[=](){
         if(ui->comboBox2->currentIndex())//下拉框不是默认才触发
         {
             ui->stackedWidget->setCurrentIndex(ui->comboBox2->currentIndex()-1);

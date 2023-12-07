@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MatCurve</class>
+ <widget class="QWidget" name="MatCurve">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>778</width>
+    <height>472</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*background-color:rgb(246, 243, 253)*/
+background-color: rgb(230, 234, 235);
+ border-radius: 20px;</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="12,1">
+   <item>
+    <widget class="CurveGroup" name="widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout"/>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_3" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QWidget" name="widget_2" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(230, 234, 235);</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+
+
+ 
+            text-align: left;
+            padding-left: 20px;
+            qproperty-icon: url(:/res/Icon/8666551_play_circle_icon.png);
+       
+
+       
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>开始</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+
+
+ 
+            text-align: left;
+            padding-left: 20px;
+          qproperty-icon: url(:/res/Icon/8666549_pause_circle_icon.png);
+       
+
+       
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>暂停</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+
+
+ 
+            text-align: left;
+            padding-left: 20px;
+            qproperty-icon: url(:/res/Icon/8666655_arrow_left_circle_icon.png);
+       
+
+       
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>上一页</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+
+
+ 
+            text-align: left;
+            padding-left: 20px;
+ qproperty-icon: url(:/res/Icon/8666670_arrow_right_circle_icon.png);
+       
+
+       
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>下一页</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+
+
+ 
+            text-align: left;
+            padding-left: 20px;
+            qproperty-icon: url(:/res/Icon/8666721_rotate_ccw_icon.png);
+       
+
+       
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>重置</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_6">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+
+
+ 
+            text-align: left;
+            padding-left: 20px;
+            qproperty-icon: url(:/res/Icon/8666692_power_icon.png);
+       
+
+       
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>结束</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_14">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+
+
+ 
+            text-align: left;
+            padding-left: 20px;
+            qproperty-icon: url(:/res/Icon/8666634_play_icon.png);
+       
+
+       
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+</string>
+           </property>
+           <property name="text">
+            <string>直接展示</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CurveGroup</class>
+   <extends>QWidget</extends>
+   <header>curvegroup.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

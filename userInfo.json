@@ -1,0 +1,31 @@
+{
+    "lastLand": {
+        "isAutoLand": 1,
+        "isSavePassword": 1,
+        "lastaccount": "17610826380",
+        "password": "1078136186"
+    },
+    "user": {
+        "17610826380": {
+            "info": {
+                "address": "",
+                "age": "",
+                "education": "",
+                "entertainment": "",
+                "game": "",
+                "handy": "",
+                "health": "",
+                "name": "",
+                "nation": "",
+                "other": "",
+                "phone": "",
+                "sex": "",
+                "sport": "",
+                "work": ""
+            },
+            "isAutoLand": 1,
+            "isSavePassword": 1,
+            "password": "1078136186"
+        }
+    }
+}

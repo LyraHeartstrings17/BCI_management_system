@@ -1,4 +1,5 @@
-﻿#include "jsonoperation.h"
+﻿//#pragma execution_character_set("utf-8")//防止乱码
+#include "jsonoperation.h"
 
 #include <QFile>
 

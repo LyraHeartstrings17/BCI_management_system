@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GameFinishWidget</class>
+ <widget class="QWidget" name="GameFinishWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1425</width>
+    <height>571</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="15,0">
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="Radar" name="emotion_radar" native="true">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Radar" name="periceive_radar" native="true">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="Curve" name="emotion_curve" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Curve" name="periceive_curve" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QPushButton" name="switchButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton {
+
+
+ 	writing-mode: vertical-rl; /* 设置文字竖排 */
+    text-align: left; /* 文字居中对齐 */
+    height: 100px; /* 设置按钮高度 */
+    min-width: 20px; max-width: 20px; min-height: 	100px; max-height: 100px; 
+
+			
+            
+
+            
+ qproperty-icon: url(:/res/Icon/9068701_change_icon.png);
+       
+
+       
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+	color: black;
+	border: 1px solid gray;
+	/* 设置阴影效果 */
+   
+    border-style: outset;
+    border-width: 1px;
+    
+    /*padding: 4px;*/
+    margin: 8px;
+    qproperty-shadow: 5px 5px 5px rgba(0, 0, 0, 150);
+}
+
+QPushButton:hover {
+    background-color: #aaa;
+}
+
+QPushButton:pressed {
+    background-color: #888;
+}
+
+ QPushButton::icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>切
+换</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Curve</class>
+   <extends>QWidget</extends>
+   <header>curve.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Radar</class>
+   <extends>QWidget</extends>
+   <header>radar.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

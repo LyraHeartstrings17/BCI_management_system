@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10.0)
+project(lib_test)
+aux_source_directory(. src)
+add_executable(lib_test ${src})
+target_link_libraries(lib_test CuvreProperty)

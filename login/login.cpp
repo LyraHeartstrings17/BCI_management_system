@@ -1,4 +1,5 @@
-﻿#include "login.h"
+﻿//#pragma execution_character_set("utf-8")//防止乱码
+#include "login.h"
 #include "ui_login.h"
 
 #include <QComboBox>

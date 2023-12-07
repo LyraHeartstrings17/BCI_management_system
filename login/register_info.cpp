@@ -1,4 +1,5 @@
-﻿#include "register_info.h"
+﻿//#pragma execution_character_set("utf-8")//防止乱码
+#include "register_info.h"
 #include "ui_register_info.h"
 
 Register_info::Register_info(QWidget *parent) :
